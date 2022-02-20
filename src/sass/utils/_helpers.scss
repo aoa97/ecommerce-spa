@@ -1,0 +1,82 @@
+.container {
+  margin: 0 auto;
+
+  @include screen(lg) {
+    max-width: 1170px;
+  }
+  @include screen(md) {
+    max-width: 970px;
+  }
+  @include screen(sm) {
+    max-width: 750px;
+  }
+  @include screen(xs) {
+    padding: 0 20px;
+  }
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+// Font Sizes
+.s-lg {
+  font-size: $text-lg;
+}
+
+.s-md {
+  font-size: $text-md;
+}
+
+.s-sm {
+  font-size: $text-sm;
+}
+
+.s-xs {
+  font-size: $text-xs;
+}
+
+// Font Weights
+.w-400 {
+  font-weight: 400;
+}
+
+.w-500 {
+  font-weight: 500;
+}
+
+.w-600 {
+  font-weight: 600;
+}
+
+.w-700 {
+  font-weight: 700;
+}
+
+// Colors
+.primary {
+  color: $primary;
+}
+
+.black {
+  color: $black;
+}
+
+.white {
+  color: $white;
+}
+
+.gray-l {
+  color: $gray-l;
+}
+
+.gray-d {
+  color: $gray-d;
+}
+
+// Other Settings
+.justify {
+  text-align: justify;
+}
