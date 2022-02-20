@@ -17,8 +17,8 @@ const CartPage = () => {
 
       {/* Cart Items */}
       <div className="cart__items">
-        {products.map((product) => (
-          <div className="cart__item">
+        {products.map((product, i) => (
+          <div key={i} className="cart__item">
             <img src={product.image} alt="Product Image" />
             <Text className="s-sm w-600">{product.title}</Text>
             <span>Counter</span>

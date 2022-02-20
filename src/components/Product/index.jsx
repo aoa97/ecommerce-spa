@@ -5,11 +5,17 @@ import Text from "../Text";
 const Product = ({ product }) => {
   return (
     <div className="product">
-      <img className="img-fluid" src={product.image} alt="Product Image" />
-      
+      <div className="product-img">
+        <img className="img-fluid" src={product.image} alt="Product Image" />
+      </div>
+
       <div className="product-details">
-        <Text className="s-md w-500">{product.title}</Text>
-        <Text className="gray-d s-xs">{product.desc}</Text>
+        <Text className="s-md w-500">
+          {product.brand} {product.model}
+        </Text>
+        <Text className="gray-d s-xs">
+          {product.ram}RAM, {product.cpu}, {product.storage}
+        </Text>
       </div>
 
       {/* Hard Coded till creating the database */}
