@@ -1,7 +1,9 @@
 .container {
   margin: 0 auto;
+  height: calc(100% - 70px);
 
   @include screen(lg) {
+    margin: 0 auto;
     max-width: 1170px;
   }
   @include screen(md) {
@@ -79,3 +81,5 @@
 .justify {
   text-align: justify;
 }
+
+

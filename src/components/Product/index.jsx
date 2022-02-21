@@ -1,8 +1,18 @@
-import "./styles.scss";
+import { useDispatch } from "react-redux";
+
+import { addToCart } from "../../redux/actions/cartActions";
 import Button from "../Button";
 import Text from "../Text";
+import "./styles.scss";
 
 const Product = ({ product }) => {
+  const dispatch = useDispatch();
+
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(product));
+  };
+
   return (
     <div className="product">
       <div className="product-img">
@@ -31,7 +41,9 @@ const Product = ({ product }) => {
         <Text className="gray-d s-lg w-500">${product.price}</Text>
       </div>
 
-      <Button icon="shopping-bag">Add to Cart</Button>
+      <Button icon="shopping-bag" onClick={handleAddToCart}>
+        Add to Cart
+      </Button>
     </div>
   );
 };

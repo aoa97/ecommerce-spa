@@ -1,39 +1,29 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import Product from "../../components/Product";
-import { getProducts } from "./../../redux/actions/productActions";
+import { getProducts } from "../../redux/actions/productActions";
+import { Product, Loader } from "../../components";
 import "./styles.scss";
-
-// Fake products
-const product = {
-  id: 1,
-  image: "https://m.media-amazon.com/images/I/51LuwUh9SES._AC_SL1000_.jpg",
-  title: "DELL 3558",
-  price: 88,
-  desc: "Core I5, 8GB RAM, 500GB HDD, GeForce920M",
-};
-const products = Array(5).fill(product);
 
 const HomePage = () => {
   const dispatch = useDispatch();
-  const {
-    loading,
-    products: ps,
-    error,
-  } = useSelector((state) => state.productList);
+  const { loading, products, error } = useSelector(state => state.productList);
 
-  useEffect(() => {
-    dispatch(getProducts());
-  }, [dispatch]);
+  useEffect(() => dispatch(getProducts()), [dispatch]);
 
   return (
-    <div className="products">
-      {ps.map((product) => (
-        <Product key={product.id} product={product.data()} />
-      ))}
-    </div>
+    <>
+      {!loading ? (
+        <div className="products">
+          {products.map((product) => (
+            <Product key={product.id} product={{...product.data(), id: product.id}} />
+          ))}
+        </div>
+      ) : <Loader />}
+    </>
   );
 };
 
 export default HomePage;
+
+// const todo = useSelector((state) => state.todos[props.id])
