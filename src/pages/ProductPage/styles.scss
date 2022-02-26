@@ -1,0 +1,40 @@
+@import "../../sass/main.scss";
+
+.product-page {
+  gap: 20px;
+
+  .product-imgWrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(0deg, #ffffff 0%, #ededed 100%);  
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+
+    ul {
+      .text {
+        margin-bottom: 10px;
+      }
+    }
+
+    .product-buttons {
+      display: flex;
+      align-items: center;
+
+      .btn {
+        width: 50%;
+        margin-left: auto;
+      }
+    }
+  }
+}

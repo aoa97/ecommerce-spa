@@ -1,11 +1,13 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import Text from "./../Text/index";
+import Text from "../Text/index";
 import "./styles.scss";
 
 const Header = () => {
   const [formDisplay, setFormDisplay] = useState(false);
+  const { cartItems } = useSelector((state) => state.cart);
 
   const handleFormClick = () => {
     setFormDisplay(!formDisplay);
@@ -22,7 +24,7 @@ const Header = () => {
         <ul className="links">
           <li className="box box-1">
             <a href="#" onClick={handleFormClick}>
-              <Text className='white s-xs w-400 box-text'>Search Lapshop</Text>
+              <Text className="white s-xs w-400 box-text">Search Lapshop</Text>
               <box-icon name="search" color="#FFF" size="20px" />
             </a>
 
@@ -35,14 +37,16 @@ const Header = () => {
           </li>
 
           <li className="box box-2">
-            <a href="#"><Text className='white s-xs'>Sign In</Text></a>
+            <Link to='/login'>
+              <Text className="white s-xs">Sign In</Text>
+            </Link>
           </li>
 
           <li className="icon">
             <Link to="/cart">
               <box-icon name="shopping-bag" type="solid" color="#FFF" />
               <div className="circle">
-                <Text className='white s-xs'>0</Text>
+                <Text className="white s-xs">{cartItems.length}</Text>
               </div>
             </Link>
           </li>

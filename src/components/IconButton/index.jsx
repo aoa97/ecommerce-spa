@@ -10,6 +10,7 @@ const IconButton = ({
   color,
   size,
   link,
+  animation,
   ...otherProps
 }) => {
   return (
@@ -23,10 +24,11 @@ const IconButton = ({
         <button className="btnico" {...otherProps}>
           <box-icon
             name={name}
-            type={type || "solid"}
+            type={type || "regular"}
             color={selColor(color)}
-            size={size  || "md"}
+            size={size  || "lg"}
             border="square"
+            animation={animation} // tada-hover | spin-hover | flashing-hover | burst-hover | fade-left-hover | fade-right-hover
           />
         </button>
       )}

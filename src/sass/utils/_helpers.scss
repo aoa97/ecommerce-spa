@@ -61,6 +61,10 @@
   color: $primary;
 }
 
+.secondary {
+  color: $secondary;
+}
+
 .black {
   color: $black;
 }
@@ -82,4 +86,21 @@
   text-align: justify;
 }
 
+// Grid
+.d-grid {
+  display: grid;
+}
+.g-50 {
+  grid-template-columns: repeat(2, 1fr);
 
+  @include screen(sm) {
+    & {
+      grid-template-columns: 1fr;
+    }
+  }
+  @include screen(xs) {
+    & {
+      grid-template-columns: 1fr;
+    }
+  }
+}

@@ -16,7 +16,8 @@ const HomePage = () => {
       {!loading ? (
         <div className="products">
           {products.map((product) => (
-            <Product key={product.id} product={{...product.data(), id: product.id}} />
+            <Product key={product.id} product={product} />
+            // <Product key={product.id} product={{...product.data(), id: product.id}} /> Firebase
           ))}
         </div>
       ) : <Loader />}
