@@ -1,0 +1,29 @@
+@import "../../sass/main.scss";
+
+.adminPage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+
+  @include screen(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include screen(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include screen(xs) {
+    grid-template-columns: 1fr;
+  }
+
+  .item-title {
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  .textInput,
+  .btn {
+    margin-bottom: 15px;
+    height: 30px;
+    padding: 5px 15px;
+  }
+}

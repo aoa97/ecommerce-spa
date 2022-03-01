@@ -1,6 +1,6 @@
 import app from "./firebaseConfig";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
-import products from './productData';
+import products from './static/productData';
 
 const db = getFirestore(app)
 const collRef = collection(db, 'products')

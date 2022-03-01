@@ -1,21 +1,23 @@
 @import "../../sass/main.scss";
 
-.product-page {
-  gap: 20px;
+.productPage {
+  column-gap: 20px;
+  height: 100%;
 
-  .product-imgWrapper {
-    width: 100%;
+  .productPage-imgWrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(0deg, #ffffff 0%, #ededed 100%);  
+    padding: 40px;
+    background: linear-gradient(0deg, #ffffff 0%, #ededed 100%);
+    border-top-left-radius: 30px;
 
     img {
-      height: 100%;
+      max-width: 100%;
     }
   }
 
-  .product-details {
+  .productPage-details {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -23,17 +25,28 @@
 
     ul {
       .text {
-        margin-bottom: 10px;
+        margin-bottom: 30px;
       }
     }
 
-    .product-buttons {
+    .productPage-buttons {
       display: flex;
       align-items: center;
+      justify-content: center;
 
       .btn {
         width: 50%;
+        margin: 0;
         margin-left: auto;
+      }
+
+      @include screen(xs) {
+        flex-direction: column;
+
+        .btn {
+          margin-top: 10px;
+          width: 100%;
+        }
       }
     }
   }

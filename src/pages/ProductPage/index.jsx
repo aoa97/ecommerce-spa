@@ -17,16 +17,6 @@ const ProductPage = () => {
 
   useEffect(() => dispatch(getProductDetails(id)), [dispatch]);
 
-  const handleDecrease = () => {
-    if (qty > 1) {
-      setQty(qty - 1);
-    }
-  };
-
-  const handleIncrease = () => {
-    setQty(qty + 1);
-  };
-
   const handleAddToCart = () => {
     dispatch(addToCart(product, qty));
   };
@@ -34,21 +24,17 @@ const ProductPage = () => {
   return (
     <>
       {!loading ? (
-        <div className="product-page d-grid g-50">
-          <div className="product-imgWrapper">
-            <img
-              src={product.image}
-              className="img-fluid"
-              alt="Product Image"
-            />
+        <div className="productPage d-grid g-50">
+          <div className="productPage-imgWrapper">
+            <img src={product.image} alt="Product Image" />
           </div>
 
-          <div className="product-details">
+          <div className="productPage-details">
             <Text className="s-lg">
               {product.brand} {product.model}
             </Text>
 
-            <ul className="product-specs">
+            <ul className="productPage-specs">
               <Text className="s-sm w-400">Processor: {product.cpu}</Text>
               <Text className="s-sm w-400">RAM: {product.ram}</Text>
               <Text className="s-sm w-400">Storage: {product.storage}</Text>
@@ -60,12 +46,8 @@ const ProductPage = () => {
 
             <Text className="s-lg w-500">${product.price}</Text>
 
-            <div className="product-buttons">
-              <Counter
-                value={qty}
-                handleIncrease={handleIncrease}
-                handleDecrease={handleDecrease}
-              />
+            <div className="productPage-buttons">
+              <Counter qty={qty} setQty={setQty} stock={product.countInStock} />
               <Button icon="shopping-bag" onClick={handleAddToCart}>
                 Add To Cart
               </Button>

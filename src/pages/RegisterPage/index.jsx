@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
-import { Text, Button } from "../../components";
-import "./styles.scss";
+import { Text, Button, TextInput, Card } from "../../components";
+// Style as login styles
 
 const RegisterPage = () => {
   const {
@@ -17,58 +17,64 @@ const RegisterPage = () => {
 
   return (
     <div className="login">
-      <form className="login-form" onSubmit={handleSubmit(handleLogin)}>
-        <Text className="s-lg">Register</Text>
-        <Text className="s-sm gray-d">Create a new account</Text>
+      <Card className="login-form">
+        <form onSubmit={handleSubmit(handleLogin)}>
+          <Text className="s-lg">Register</Text>
+          <Text className="s-sm gray-d">Create a new account</Text>
 
-        {/* Display Name */}
-        <input
-          {...register("name", { required: true })}
-          placeholder="Display Name"
-        />
-        <span className="error-message">
-          {errors.name?.type === "required" && "Display name is required."}
-        </span>
+          {/* Display Name */}
+          <TextInput
+            reg={register("name", { required: true })}
+            placeholder="Display Name"
+            className="login-textInput"
+          />
+          <span className="error-message">
+            {errors.name?.type === "required" && "Display name is required."}
+          </span>
 
-        {/* E-mail */}
-        <input
-          {...register("email", { required: true })}
-          type="email"
-          placeholder="E-mail"
-        />
-        <span className="error-message">
-          {errors.email?.type === "required" && "E-mail is required."}
-        </span>
+          {/* E-mail */}
+          <TextInput
+            reg={register("email", { required: true })}
+            type="email"
+            placeholder="E-mail"
+            className="login-textInput"
+          />
+          <span className="error-message">
+            {errors.email?.type === "required" && "E-mail is required."}
+          </span>
 
-        {/* Password */}
-        <input
-          {...register("password", { required: true, minLength: 8 })}
-          type="password"
-          placeholder="Password"
-        />
-        <span className="error-message">
-          {errors.password?.type === "required" && "Password is required."}
-        </span>
-        <span className="error-message">
-          {errors.password?.type === "minLength" && "Password should be at-least 8 characters."}
-        </span>
+          {/* Password */}
+          <TextInput
+            reg={register("password", { required: true, minLength: 8 })}
+            type="password"
+            placeholder="Password"
+            className="login-textInput"
+          />
+          <span className="error-message">
+            {errors.password?.type === "required" && "Password is required."}
+          </span>
+          <span className="error-message">
+            {errors.password?.type === "minLength" &&
+              "Password should be at-least 8 characters."}
+          </span>
 
-        {/* Buttons */}
-        <div className="form-buttons">
-          <Button>Sign Up</Button>
-          <Button icon="google" iconType="logo" className="secondary">
-            Sign in With Google
-          </Button>
-        </div>
+          {/* Buttons */}
+          <div className="form-buttons">
+            <Button>Sign Up</Button>
+            <Button icon="google" iconType="logo" className="secondary">
+              Sign in With Google
+            </Button>
+          </div>
 
-        {/* Switch to Register */}
-        <Text className="gray-d s-xs w-500 already">
-          Already have an account?{" "}
-          <Link to="/login" className="primary">
-            Sign In
-          </Link>
-        </Text>
-      </form>
+          {/* Switch to Register */}
+          <Text className="gray-d s-xs w-500 already">
+            Already have an account?{" "}
+            <Link to="/login" className="primary">
+              Sign In
+            </Link>
+          </Text>
+        </form>
+      </Card>
     </div>
   );
 };

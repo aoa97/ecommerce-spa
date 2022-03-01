@@ -17,11 +17,6 @@
   }
 }
 
-.img-fluid {
-  max-width: 100%;
-  height: auto;
-}
-
 // Font Sizes
 .s-lg {
   font-size: $text-lg;
@@ -86,12 +81,28 @@
   text-align: justify;
 }
 
+.mb-15 {
+  margin-bottom: 15px;
+}
+.mt-15 {
+  margin-top: 15px;
+}
+.my-15 {
+  margin: 15px 0;
+}
+
 // Grid
 .d-grid {
   display: grid;
 }
 .g-50 {
   grid-template-columns: repeat(2, 1fr);
+
+  @include screen(md) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 
   @include screen(sm) {
     & {

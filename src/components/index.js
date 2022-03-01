@@ -1,23 +1,26 @@
-import Button from "./Button";
-import IconButton from "./IconButton";
-import Header from './Header'
-import Text from './Text'
-import Loader from './Loader';
-import Product from './Product';
-import CartItem from './CartItem';
-import Message from './Message';
-import Counter from './Counter';
-import Modal from './Modal';
+import {
+  Text,
+  TextInput,
+  Button,
+  IconButton,
+  Loader,
+  Counter,
+  Message,
+} from "./atoms";
+import { Card, Product, CartItem } from "./molecules";
+import { Header, Modal } from "./organisms";
 
 export {
-    Button,
-    IconButton,
-    Header,
-    Text,
-    Loader,
-    Product,
-    CartItem,
-    Message,
-    Counter,
-    Modal
-}
+  Button,
+  TextInput,
+  IconButton,
+  Header,
+  Text,
+  Loader,
+  Product,
+  CartItem,
+  Message,
+  Counter,
+  Modal,
+  Card,
+};

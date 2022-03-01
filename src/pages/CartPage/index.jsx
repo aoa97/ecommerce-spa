@@ -15,7 +15,7 @@ const CartPage = () => {
         {cartItems.length > 0 ? (
           <div className="cart__items">
             {cartItems.map((product) => (
-              <CartItem product={product} />
+              <CartItem key={product.id} product={product} />
             ))}
 
             {/* Total & Payment */}

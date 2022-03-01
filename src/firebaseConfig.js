@@ -5,7 +5,9 @@ import {
   serverTimestamp,
   Timestamp,
   SnapshotOptions,
+  connectFirestoreEmulator,
 } from "firebase/firestore";
+import { connectStorageEmulator, getStorage } from "firebase/storage";
 
 const config = {
   apiKey: "AIzaSyBVnJSC_TZQ8NkcNJNfJ3FkB_I8SaeOnnQ",
@@ -18,7 +20,13 @@ const config = {
 };
 const firebaseApp = initializeApp(config);
 
-const firebaseDB = getFirestore(firebaseApp); // Firestore
+// Firestore
+const database = getFirestore(firebaseApp);
+connectFirestoreEmulator(database, "localhost", 3003);
 
-export { firebaseDB };
+// Storage
+const storage = getStorage(firebaseApp);
+connectStorageEmulator(storage, "localhost", 3004);
+
+export { database, storage };
 export default firebaseApp;
