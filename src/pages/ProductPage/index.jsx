@@ -4,7 +4,8 @@ import { useParams } from "react-router-dom";
 
 import { getProductDetails } from "../../redux/actions/productActions";
 import { addToCart } from "../../redux/actions/cartActions";
-import { Product, Loader, Text, Counter, Button } from "../../components";
+import { Card, Loader, Text, Counter, Button } from "../../components";
+import ReviewListItem from "./ReviewListItem";
 import "./styles.scss";
 
 const ProductPage = () => {
@@ -29,10 +30,41 @@ const ProductPage = () => {
             <img src={product.image} alt="Product Image" />
           </div>
 
-          <div className="productPage-details">
-            <Text className="s-lg">
-              {product.brand} {product.model}
-            </Text>
+          <Card className="productPage-details">
+            <div className="productPage-title">
+              <Text className="s-lg">
+                {product.brand} {product.model}
+              </Text>
+
+              <div className="productPage-title__reviewWrapper">
+                <div>
+                  <i
+                    className="bx bxs-star"
+                    style={{ color: "#DC3A1A", fontSize: 16 }}
+                  />
+                  <i
+                    className="bx bxs-star"
+                    style={{ color: "#DC3A1A", fontSize: 16 }}
+                  />
+                  <i
+                    className="bx bxs-star"
+                    style={{ color: "#DC3A1A", fontSize: 16 }}
+                  />
+                  <i
+                    className="bx bxs-star"
+                    style={{ color: "#DC3A1A", fontSize: 16 }}
+                  />
+                  <i
+                    className="bx bx-star"
+                    style={{ color: "#DC3A1A", fontSize: 16 }}
+                  />
+                </div>
+
+                <a href="#reviews" className="primary w-600 ">
+                  246 Reviews
+                </a>
+              </div>
+            </div>
 
             <ul className="productPage-specs">
               <Text className="s-sm w-400">Processor: {product.cpu}</Text>
@@ -52,6 +84,13 @@ const ProductPage = () => {
                 Add To Cart
               </Button>
             </div>
+          </Card>
+
+          <div className="productPage-reviews" id="reviews">
+            <Text className="s-lg mb-15">REVIEWS</Text>
+            <Card>
+              <ReviewListItem />
+            </Card>
           </div>
         </div>
       ) : (

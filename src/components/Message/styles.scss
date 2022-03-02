@@ -1,0 +1,18 @@
+@import "../../sass/main.scss";
+
+.message {
+  margin-top: 20px;
+  background-color: $gray-l;
+  padding: 10px;
+  border: 1px solid $gray-d;
+  border-radius: 5px;
+  overflow-x: hidden;
+}
+
+.error {
+  border-color: $primary;
+  .text {
+    font-weight: 400;
+    color: $primary;
+  }
+}

@@ -1,0 +1,35 @@
+@import "../../../../sass/main.scss";
+
+.product {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .product-imgWrapper {
+    flex: 2; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .product-details {
+    flex: 1;
+  }
+
+  .product-stars-price {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .product-stars {
+      padding: 0;
+    }
+  }
+}

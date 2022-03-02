@@ -1,0 +1,52 @@
+@import "../../../sass/main.scss";
+
+.reviewsItem {
+  &:not(:first-child) {
+    margin-top: 15px;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $gray-l;
+  }
+
+  .reviewsItem-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .review-details {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media (max-width: 375px) {
+        flex-direction: column;
+      }
+
+      img {
+        width: 45px;
+        height: 45px;
+        border-radius: 45px;
+        object-fit: cover;
+        margin-right: 15px;
+      }
+
+      .review-stars {
+        display: flex;
+        align-items: center;
+
+        .text {
+          margin-left: 5px;
+        }
+      }
+    }
+
+    .review-date {
+    }
+  }
+
+  .reviewsItem-body {
+    padding: 20px;
+    text-align: center;
+  }
+}

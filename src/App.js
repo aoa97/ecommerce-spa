@@ -1,6 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HomePage, CartPage, ProductPage, LoginPage, RegisterPage, AdminPage } from "./pages";
-import { Header } from "./components";
+
+import {
+  HomePage,
+  CartPage,
+  ProductPage,
+  LoginPage,
+  RegisterPage,
+  AdminPage,
+} from "./pages";
+import Header from "./layout/Header";
 
 const App = () => {
   return (

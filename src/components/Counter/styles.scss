@@ -1,0 +1,28 @@
+@import "../../sass/main.scss";;
+
+.counterWrapper {
+  min-width: 100px;
+  height: 35px;
+  border-radius: 12px;
+  border: 1px solid $gray-l;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $white;
+
+  span {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+
+    &.value {
+      pointer-events: none;
+      border: {
+        right: 1px solid $gray-l;
+        left: 1px solid $gray-l;
+      }
+    }
+  }
+}

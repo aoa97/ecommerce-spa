@@ -1,6 +1,6 @@
 import { collection, getDocs, addDoc, doc, getDoc } from "firebase/firestore";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { database as db, storage } from "../../firebaseConfig";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { db, storage } from "../../firebaseConfig";
 import {
   PRODUCT_LIST_REQUEST,
   PRODUCT_LIST_RESPONSE,
@@ -12,7 +12,6 @@ import {
   PRODUCT_ADD_RESPONSE,
   PRODUCT_ADD_FAIL,
 } from "../constants/productConstants";
-import products from "../../static/productData"; // Temp
 
 // Admin
 export const addProduct = (product) => {
@@ -27,10 +26,11 @@ export const addProduct = (product) => {
       const imageUrl = await getDownloadURL(imageRef);
 
       // Insert into firestore
-      const productRef = collection(db, "products");
-      product.image = imageUrl; 
-      product.countInStock = Number(product.countInStock)
-      await addDoc(productRef, product);
+      const productsRef = collection(db, "products");
+      product.image = imageUrl;
+      product.price = Number(product.price);
+      product.countInStock = Number(product.countInStock);
+      await addDoc(productsRef, product);
 
       dispatch({ type: PRODUCT_ADD_RESPONSE });
     } catch (e) {

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 
-import { Text, Button, Card, TextInput, Loader } from "../../components";
+import { Text, Button, Card, TextInput } from "../../components";
 import { addProduct } from "../../redux/actions/productActions";
 import "./styles.scss";
 
@@ -16,10 +16,10 @@ const AdminPage = () => {
   } = useForm();
 
   useEffect(() => {
-    if(success){
-      alert("Done!")
+    if (success) {
+      alert("Done!");
     }
-  }, [success])
+  }, [success]);
 
   const handleAddProduct = (data) => {
     // dispatch(addProduct({ ...data, image: data.image[0] }));

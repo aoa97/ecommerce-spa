@@ -1,8 +1,6 @@
 @import "../../sass/main.scss";;
 
 .cart__items {
-  margin-top: 20px;
-
   .total-pay {
     display: flex;
     align-items: center;
@@ -10,6 +8,17 @@
 
     .pay-btn {
       width: 40%;
+    }
+  }
+
+  @include screen(xs) {
+    & {
+      .total-pay {
+        flex-direction: column;
+        .pay-btn {
+          width: 100%;
+        }
+      }
     }
   }
 }

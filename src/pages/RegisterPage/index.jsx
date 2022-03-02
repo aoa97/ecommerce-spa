@@ -1,19 +1,31 @@
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 
-import { Text, Button, TextInput, Card } from "../../components";
+import { Text, Button, TextInput, Card, Message } from "../../components";
+import { registerUser } from "../../redux/actions/userActions";
 // Style as login styles
 
 const RegisterPage = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { loading, user, error } = useSelector((state) => state.userRegister);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const handleLogin = (data) => {
-    console.log(data);
+  const handleLogin = (user) => {
+    dispatch(registerUser(user));
   };
+
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user]);
 
   return (
     <div className="login">
@@ -58,9 +70,11 @@ const RegisterPage = () => {
               "Password should be at-least 8 characters."}
           </span>
 
+          {error && <Message error>{error}</Message>}
+
           {/* Buttons */}
           <div className="form-buttons">
-            <Button>Sign Up</Button>
+            <Button loading={loading}>Sign Up</Button>
             <Button icon="google" iconType="logo" className="secondary">
               Sign in With Google
             </Button>
