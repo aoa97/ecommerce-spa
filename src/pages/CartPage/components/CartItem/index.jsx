@@ -29,13 +29,13 @@ const CartItem = ({ product }) => {
       <div className="cartItem-imgWrapper" onClick={handleNav}>
         <img src={product.image} alt="Product Image" />
       </div>
-      
-      <Text className="cartItem-title s-sm w-600" onClick={handleNav}>
+
+      <Text className="cartItem-title fs-sm fw-600" onClick={handleNav}>
         {product.name}
       </Text>
       <Counter qty={qty} setQty={setQty} stock={product.countInStock} />
-      <Text className="my-15 gray-d s-sm w-500">
-        ${product.price * product.qty}
+      <Text className="my-15 gray-d fs-sm fw-500">
+        {product.price * product.qty} EGP
       </Text>
       <IconButton
         name="trash"

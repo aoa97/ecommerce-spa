@@ -28,6 +28,7 @@
     "redux-firestore": "^0.15.2",
     "redux-thunk": "^2.4.1",
     "sass": "^1.49.8",
+    "swiper": "^8.0.7",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

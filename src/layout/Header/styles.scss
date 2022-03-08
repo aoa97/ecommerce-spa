@@ -2,11 +2,12 @@
 
 nav {
   background-color: $black;
-  height: 70px;
+  height: 65px;
   width: 100%;
-  position: sticky;
-  top: 0;
-  left: 0;
+
+  .container {
+    padding-top: 0;
+  }
 
   .navbar {
     height: 100%;
@@ -19,8 +20,15 @@ nav {
       justify-content: center;
       align-items: center;
 
+      svg {
+        fill: $white;
+        width: 30px;
+        height: 30px;
+      }
+
       .brand-text {
         margin-left: 5px;
+        text-transform: uppercase;
 
         @media (max-width: 480px) {
           & {

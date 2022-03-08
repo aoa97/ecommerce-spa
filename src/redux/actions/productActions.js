@@ -1,4 +1,4 @@
-import { collection, getDocs, addDoc, doc, getDoc } from "firebase/firestore";
+import { collection, getDocs, addDoc, doc, getDoc, where, query } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db, storage } from "../../firebaseConfig";
 import {
@@ -30,6 +30,7 @@ export const addProduct = (product) => {
       product.image = imageUrl;
       product.price = Number(product.price);
       product.countInStock = Number(product.countInStock);
+      product.createdAt = Date.now();
       await addDoc(productsRef, product);
 
       dispatch({ type: PRODUCT_ADD_RESPONSE });
@@ -40,14 +41,16 @@ export const addProduct = (product) => {
   };
 };
 
-export const getProducts = () => {
+export const getProducts = (brand) => {
   return async (dispatch, getState) => {
     try {
       dispatch({ type: PRODUCT_LIST_REQUEST });
 
       // Fetch products from the DB
       const productsRef = collection(db, "products");
-      const products = await getDocs(productsRef);
+      const productsQuery = query(productsRef, where("brand", "==", brand))
+      const products = await getDocs(brand == 'Hot' ? productsRef : productsQuery);
+      
       dispatch({ type: PRODUCT_LIST_RESPONSE, payload: products.docs });
     } catch (e) {
       dispatch({ type: PRODUCT_LIST_FAIL, payload: e.message });

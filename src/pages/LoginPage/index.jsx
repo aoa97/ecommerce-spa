@@ -19,8 +19,8 @@ const LoginPage = () => {
     <div className="login">
       <Card className="login-form">
         <form onSubmit={handleSubmit(handleLogin)}>
-          <Text className="s-lg">Sign In</Text>
-          <Text className="mb-15 s-sm gray-d">Welcome back!</Text>
+          <Text className="fs-lg">Sign In</Text>
+          <Text className="mb-15 fs-sm gray-d">Welcome back!</Text>
 
           {/* E-mail */}
           <TextInput
@@ -49,7 +49,7 @@ const LoginPage = () => {
           </span>
 
           {/* Forgot Password */}
-          <Link to="/" className="primary s-xs w-500 my-15 forgot">
+          <Link to="/" className="primary fs-xs fw-500 my-15 forgot">
             Forgot Password?
           </Link>
 
@@ -62,7 +62,7 @@ const LoginPage = () => {
           </div>
 
           {/* Switch to Register */}
-          <Text className="gray-d s-xs w-500 already">
+          <Text className="gray-d fs-xs fw-500 already">
             Doesn't have an Account?{" "}
             <Link to="/register" className="primary">
               Register

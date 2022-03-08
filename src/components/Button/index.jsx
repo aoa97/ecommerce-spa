@@ -13,7 +13,7 @@ const Button = ({
     <>
       {!loading && (
         <button className={`btn ${className}`} {...otherProps}>
-          <Text className="text s-sm w-500">{children}</Text>
+          <Text className="text fs-sm fw-500">{children}</Text>
           {icon && <box-icon type={iconType} name={icon} />}
         </button>
       )}

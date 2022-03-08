@@ -31,8 +31,8 @@ const RegisterPage = () => {
     <div className="login">
       <Card className="login-form">
         <form onSubmit={handleSubmit(handleLogin)}>
-          <Text className="s-lg">Register</Text>
-          <Text className="s-sm gray-d">Create a new account</Text>
+          <Text className="fs-lg">Register</Text>
+          <Text className="fs-sm gray-d">Create a new account</Text>
 
           {/* Display Name */}
           <TextInput
@@ -81,7 +81,7 @@ const RegisterPage = () => {
           </div>
 
           {/* Switch to Register */}
-          <Text className="gray-d s-xs w-500 already">
+          <Text className="gray-d fs-xs fw-500 already">
             Already have an account?{" "}
             <Link to="/login" className="primary">
               Sign In

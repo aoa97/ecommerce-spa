@@ -1,5 +1,6 @@
 .container {
   margin: 0 auto;
+  padding-top: 15px;
   height: calc(100% - 70px);
 
   @include screen(lg) {
@@ -17,37 +18,37 @@
   }
 }
 
-// Font Sizes
-.s-lg {
+// Font Sizes & Weights
+.fs-lg {
   font-size: $text-lg;
 }
 
-.s-md {
+.fs-md {
   font-size: $text-md;
 }
 
-.s-sm {
+.fs-sm {
   font-size: $text-sm;
 }
 
-.s-xs {
+.fs-xs {
   font-size: $text-xs;
 }
 
 // Font Weights
-.w-400 {
+.fw-400 {
   font-weight: 400;
 }
 
-.w-500 {
+.fw-500 {
   font-weight: 500;
 }
 
-.w-600 {
+.fw-600 {
   font-weight: 600;
 }
 
-.w-700 {
+.fw-700 {
   font-weight: 700;
 }
 
@@ -91,11 +92,36 @@
   margin: 15px 0;
 }
 
+.pb-15 {
+  padding-bottom: 15px;
+}
+.pt-15 {
+  padding-top: 15px;
+}
+.py-15 {
+  padding: 15px 0;
+}
+
 // Grid
 .d-grid {
   display: grid;
 }
+
+// Layout
+.w-50 {
+  @include screen(lg) {
+    width: 50%;
+  }
+  @include screen(md) {
+    width: 60%;
+  }
+  @include screen(sm) {
+    width: 60%;
+  }
+}
+
 .g-50 {
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
 
   @include screen(md) {

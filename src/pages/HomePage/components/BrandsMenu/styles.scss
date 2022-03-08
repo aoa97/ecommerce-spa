@@ -1,0 +1,55 @@
+@import "../../../../sass/main.scss";
+
+.brands {
+  background-color: $gray-l;
+
+  .container {
+    padding: 0;
+  }
+
+  .text.latest {
+    text-align: center;
+  }
+  
+  .brandsWrapper {
+      display: flex;
+      align-items: center;
+      overflow: auto;
+  }
+
+  .brandItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 30px;
+    border-right: 1px solid $white;
+    cursor: pointer;
+
+    .text {
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    svg {
+      height: fit-content;
+      width: 45px;
+      height: 45px;
+      margin-bottom: 5px;
+    }
+
+    fill: $gray-d;
+    .text {
+      color: $gray-d;
+    }
+
+    &.active {
+      background-color: $white;
+      height: 100%;
+
+      fill: $primary;
+      .text {
+        color: $primary;
+      }
+    }
+  }
+}

@@ -27,10 +27,10 @@ const ProductListItem = ({ product }) => {
           className="product-details"
           onClick={() => nav(`/product/${product.id}`)}
         >
-          <Text className="s-md w-500">
+          <Text className="fs-md fw-500">
             {product.brand} {product.model}
           </Text>
-          <Text className="gray-d s-xs">
+          <Text className="gray-d fs-xs">
             {product.ram}RAM, {product.cpu}, {product.storage}
           </Text>
         </div>
@@ -65,7 +65,7 @@ const ProductListItem = ({ product }) => {
             <box-icon name="star" type="solid" size="16px" color="#DC3A1A" />
             <box-icon name="star" size="16px" color="#DC3A1A" /> */}
           </div>
-          <Text className="gray-d s-lg w-500">${product.price}</Text>
+          <Text className="gray-d fs-md fw-500">{product.price} EGP</Text>
         </div>
 
         <Button icon="shopping-bag" onClick={handleAddToCart}>

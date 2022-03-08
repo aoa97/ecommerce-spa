@@ -1,28 +1,37 @@
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import { Text, Button, Message } from "../../components";
 import CartItem from "./components/CartItem";
 import "./styles.scss";
 
 const CartPage = () => {
+  const navigate = useNavigate();
   const { cartItems } = useSelector((state) => state.cart);
 
   const calcTotalPrice = () => {
-    const totalPrice = cartItems.reduce((a, x) => a.qty + x)
+    const totalPrice = cartItems.reduce((a, x) => a.qty + x);
     console.log(totalPrice);
-    return "$3000"
-  }
+    return "$3000";
+  };
 
   return (
-    <>
-      <Text className="s-lg mb-15">SHOPPING CART</Text>
+    <div className="container">
+      <Text className="fs-lg mb-15">SHOPPING CART</Text>
 
       {/* Empty Cart */}
-      {cartItems.length == 0 && <Message>Your Cart Is Empty</Message>}
+      {cartItems.length == 0 && (
+        <div className="w-50">
+          <Message>Your Cart Is Empty</Message>
+          <Button className="dark w-50 mt-15" onClick={() => navigate("/")}>
+            Shop Now
+          </Button>
+        </div>
+      )}
 
       {/* Cart with Items */}
       {cartItems.length > 0 && (
-        <div className="d-grid g-50">
+        <div className="w-50">
           <div className="cart__items">
             {/* Display Cart Items */}
             {cartItems.map((product) => (
@@ -31,7 +40,7 @@ const CartPage = () => {
 
             {/* Total Price & Payment Button */}
             <div className="total-pay">
-              <Text className="s-lg">TOTAL: {calcTotalPrice()}</Text>
+              <Text className="fs-lg">TOTAL: {calcTotalPrice()}</Text>
               <Button className="pay-btn" icon="credit-card">
                 Pay with
               </Button>
@@ -39,7 +48,7 @@ const CartPage = () => {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

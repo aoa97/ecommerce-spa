@@ -12,7 +12,7 @@ const ReviewListItem = () => {
           />
 
           <div className="review-userName-stars">
-            <Text className="s-xs w-600">Ahmed Usama</Text>
+            <Text className="fs-xs fw-600">Ahmed Usama</Text>
             
             <div className="review-stars">
               <i
@@ -35,16 +35,16 @@ const ReviewListItem = () => {
                 className="bx bx-star"
                 style={{ color: "#DC3A1A", fontSize: 18 }}
               />
-              <Text className="s-sm w-600">4.0</Text>
+              <Text className="fs-sm fw-600">4.0</Text>
             </div>
           </div>
         </div>
 
-        <Text className="review-date s-xs">1 day ago</Text>
+        <Text className="review-date fs-xs">1 day ago</Text>
       </div>
 
       <div className="reviewsItem-body">
-        <Text className="s-sm">This is a great laptop to buy :D</Text>
+        <Text className="fs-sm">This is a great laptop to buy :D</Text>
       </div>
     </div>
   );

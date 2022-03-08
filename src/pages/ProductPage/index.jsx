@@ -23,7 +23,7 @@ const ProductPage = () => {
   };
 
   return (
-    <>
+    <div className="container">
       {!loading ? (
         <div className="productPage d-grid g-50">
           <div className="productPage-imgWrapper">
@@ -32,7 +32,7 @@ const ProductPage = () => {
 
           <Card className="productPage-details">
             <div className="productPage-title">
-              <Text className="s-lg">
+              <Text className="fs-lg">
                 {product.brand} {product.model}
               </Text>
 
@@ -60,23 +60,23 @@ const ProductPage = () => {
                   />
                 </div>
 
-                <a href="#reviews" className="primary w-600 ">
+                <a href="#reviews" className="primary fw-600 ">
                   246 Reviews
                 </a>
               </div>
             </div>
 
             <ul className="productPage-specs">
-              <Text className="s-sm w-400">Processor: {product.cpu}</Text>
-              <Text className="s-sm w-400">RAM: {product.ram}</Text>
-              <Text className="s-sm w-400">Storage: {product.storage}</Text>
-              <Text className="s-sm w-400">Graphics: {product.vga}</Text>
-              <Text className="s-sm w-400">
+              <Text className="fs-sm fw-400">Processor: {product.cpu}</Text>
+              <Text className="fs-sm fw-400">RAM: {product.ram}</Text>
+              <Text className="fs-sm fw-400">Storage: {product.storage}</Text>
+              <Text className="fs-sm fw-400">Graphics: {product.vga}</Text>
+              <Text className="fs-sm fw-400">
                 Resolution: {product.resolution}
               </Text>
             </ul>
 
-            <Text className="s-lg w-500">${product.price}</Text>
+            <Text className="gray-d fs-lg fw-500">{product.price} EGP</Text>
 
             <div className="productPage-buttons">
               <Counter qty={qty} setQty={setQty} stock={product.countInStock} />
@@ -87,7 +87,7 @@ const ProductPage = () => {
           </Card>
 
           <div className="productPage-reviews" id="reviews">
-            <Text className="s-lg mb-15">REVIEWS</Text>
+            <Text className="fs-lg mb-15">REVIEWS</Text>
             <Card>
               <ReviewListItem />
             </Card>
@@ -96,7 +96,7 @@ const ProductPage = () => {
       ) : (
         <Loader />
       )}
-    </>
+    </div>
   );
 };
 

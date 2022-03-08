@@ -10,8 +10,8 @@ const Message = ({
   ...otherProps
 }) => {
   return (
-    <div className={`message ${error ? "error" : ""}`} {...otherProps}>
-      <Text className="s-sm">{children}</Text>
+    <div className={`${className} message ${error ? "error" : ""}`} {...otherProps}>
+      <Text className="fs-sm">{children}</Text>
     </div>
   );
 };

@@ -22,26 +22,26 @@ const AdminPage = () => {
   }, [success]);
 
   const handleAddProduct = (data) => {
-    // dispatch(addProduct({ ...data, image: data.image[0] }));
-    dispatch(
-      addProduct({
-        image: data.image[0],
-        price: 150,
-        brand: "Dell",
-        model: "Inspiron 3558",
-        cpu: "Intel Core I5",
-        vga: "Nvidia GeForce 920M",
-        ram: "4GB",
-        storage: "500GB HDD",
-        countInStock: 5,
-      })
-    );
+    dispatch(addProduct({ ...data, image: data.image[0] }));
+    // dispatch(
+    //   addProduct({
+    //     image: data.image[0],
+    //     price: 150,
+    //     brand: "Dell",
+    //     model: "Inspiron 3558",
+    //     cpu: "Intel Core I5",
+    //     vga: "Nvidia GeForce 920M",
+    //     ram: "4GB",
+    //     storage: "500GB HDD",
+    //     countInStock: 5,
+    //   })
+    // );
   };
 
   return (
     <div className="adminPage">
       <Card>
-        <Text className="s-lg item-title">Product</Text>
+        <Text className="fs-lg item-title">Product</Text>
         <form onSubmit={handleSubmit(handleAddProduct)}>
           <TextInput
             reg={register("image", { required: false })}
@@ -91,7 +91,7 @@ const AdminPage = () => {
             type="number"
             placeholder="Count In Stock"
           />
-          <Text className="primary s-xs">
+          <Text className="primary fs-xs">
             {errors &&
               Object.keys(errors).length > 0 &&
               "Please complete the fields."}
